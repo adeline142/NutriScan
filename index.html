@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriScan</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen p-6">
+
+<header class="mb-8 max-w-2xl mx-auto flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-green-700">
+        Nutri<span class="text-gray-800">Scan</span>
+    </h1>
+</header>
+
+<main class="max-w-2xl mx-auto space-y-8">
+
+    <!-- Input Section -->
+    <section class="card">
+        <h2 class="section-title">What did you eat?</h2>
+
+        <textarea id="mealInput"
+            class="input-box"
+            rows="4"
+            placeholder="e.g., chicken breast, rice, vegetables"></textarea>
+
+        <button id="scanButton" class="scan-btn">
+            Scan Meal
+        </button>
+    </section>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="hidden card">
+        <h2 class="section-title">Nutritional Breakdown</h2>
+
+        <p id="feedbackSummary" class="feedback-summary"></p>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="metric-card">
+                <p>Calories</p>
+                <p id="calResult" class="metric-value">0</p>
+            </div>
+
+            <div id="sugarCard" class="metric-card">
+                <p>Sugar (g)</p>
+                <p id="sugarResult" class="metric-value">0</p>
+            </div>
+
+            <div id="sodiumCard" class="metric-card">
+                <p>Sodium (mg)</p>
+                <p id="sodiumResult" class="metric-value">0</p>
+            </div>
+
+            <div class="metric-card">
+                <p>Protein (g)</p>
+                <p id="proteinResult" class="metric-value">0</p>
+            </div>
+        </div>
+
+        <div id="smartFeedback" class="smart-feedback">
+            <p class="font-semibold">Smart Feedback:</p>
+            <p id="feedbackText"></p>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
