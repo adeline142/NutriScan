@@ -1,4 +1,3 @@
-// OOP CLASS: Meal
 class Meal {
     constructor(description) {
         this.description = description;
@@ -20,7 +19,6 @@ class Meal {
     }
 }
 
-// OOP CLASS: App Controller
 class NutriScanApp {
     constructor() {
         this.scanButton = document.getElementById("scanButton");
@@ -78,5 +76,5 @@ class NutriScanApp {
     }
 }
 
-// Initialize App
 new NutriScanApp();
+
