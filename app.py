@@ -3,7 +3,6 @@ from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
 
-# --- Your Original Logic (Corrected) ---
 class Meal:
     def __init__(self, description):
         self.description = description
@@ -20,7 +19,6 @@ class Meal:
         self.protein = 25 + random.randint(0, 20)
         return healthy
 
-# --- HTML Template (The UI) ---
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html>
@@ -37,10 +35,10 @@ HTML_TEMPLATE = """
 </head>
 <body>
     <div class="card">
-        <h1>🥗 NutriScan App</h1>
+        <h1>🥗 NutriScan </h1>
         <form method="POST">
             <input type="text" name="meal" placeholder="What did you eat?" required>
-            <button type="submit">Analyze</button>
+            <button type="submit">Scan</button>
         </form>
 
         {% if meal %}
@@ -74,4 +72,5 @@ def index():
     return render_template_string(HTML_TEMPLATE, meal=meal, is_healthy=is_healthy)
 
 if __name__ == "__main__":
+
     app.run(debug=True)
